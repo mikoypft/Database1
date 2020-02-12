@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace ProjectNumber2
 {
-    public partial class Form2 : Form
+    public partial class Form3 : Form
     {
-        public Form2()
+        public Form3()
         {
             InitializeComponent();
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'database1DataSet._5th_Year_Students' table. You can move, or remove it, as needed.
+            this._5th_Year_StudentsTableAdapter.Fill(this.database1DataSet._5th_Year_Students);
+
         }
 
         private void _5th_Year_StudentsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -22,18 +29,6 @@ namespace ProjectNumber2
             this.Validate();
             this._5th_Year_StudentsBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.database1DataSet);
-
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'database1DataSet._5th_Year_Students' table. You can move, or remove it, as needed.
-            this._5th_Year_StudentsTableAdapter.Fill(this.database1DataSet._5th_Year_Students);
-
-        }
-
-        private void _5th_Year_StudentsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
     }
